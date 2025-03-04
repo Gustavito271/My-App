@@ -1,0 +1,11 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "prettier.printWidth": 80,
+  "prettier.singleQuote": false,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true
+}
