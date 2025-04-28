@@ -7,6 +7,7 @@ import style from '../common/styles/main-page.module.scss'
 export const TestPage: FC = () => {
   const isMobile = useIsMobile()
 
+  // Add date
   const dataExample = [
     { description: 'Test 1', value: 'R$0.80', operation: 'Saída' },
     { description: 'Test 2', value: 'R$0.80', operation: 'Saída' },
