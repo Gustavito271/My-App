@@ -17,7 +17,7 @@ export const TestPage: FC = () => {
   ]
 
   return (
-    <div className={style.container}>
+    <div className={style.mainContainer}>
       <title>Test</title>
 
       {/* Add header */}

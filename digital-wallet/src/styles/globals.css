@@ -1,14 +1,31 @@
 :root {
-  --background: #ffffff;
+  /* colors */
+  --background: #e0e0e0;
+  /* --background: #8c6c6c; */
   --foreground: #171717;
+  /* Primary Colors */
+  --colors-primary-main: #003366;
+  --colors-primary-light: #8c6c6c;
+  --colors-primary-dark: #734f4f;
+  /* --colors-primary-main: #5d3c3c;
+  --colors-primary-light: #8c6c6c;
+  --colors-primary-dark: #734f4f; */
+  /* Text Colors */
+  --colors-text-primary: #000;
+  --colors-text-secondary: #3b3b3b;
+  --colors-text-contrast: #f5f0f0;
+
+  /* Other Props */
+  color-scheme: light;
 }
 
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {
@@ -19,7 +36,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Big Shoulders Text', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +52,8 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
