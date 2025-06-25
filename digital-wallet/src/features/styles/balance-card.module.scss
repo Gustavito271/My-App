@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  .currentDate {
+    font-weight: 700;
+  }
+}
+
+.currentDateBalance {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nextDate {
+  margin-top: 1rem;
+}

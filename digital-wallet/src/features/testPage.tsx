@@ -1,8 +1,13 @@
+import { CustomButton } from '@/common/components/Button'
 import { Card } from '@/common/components/Card'
+import { Divider } from '@/common/components/Divider'
+import { InfoTooltip } from '@/common/components/InfoTooltip'
 import { TableRow } from '@/common/components/TableRow'
 import { useIsMobile } from '@/common/hooks/useIsMobile'
+import { Home, Paid, Wallet } from '@mui/icons-material'
 import { FC } from 'react'
 import style from '../common/styles/main-page.module.scss'
+import { BalanceCard } from './components/BalanceCard'
 
 export const TestPage: FC = () => {
   const isMobile = useIsMobile()
@@ -20,59 +25,59 @@ export const TestPage: FC = () => {
     <div className={style.mainContainer}>
       <title>Test</title>
 
-      {/* Add header */}
-
-      <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'row', gap: '1rem', height: 'fit-content' }}>
-        <Card>
-          <TableRow fontWeight={600} labels={['Descrição', 'Valor', 'Operação']} />
-
-          <div>
-            {dataExample.map((data) => (
-              <TableRow labels={Object.values(data)} />
-            ))}
-          </div>
-        </Card>
-
-        {/* Transformar o segundo (descrição) em uma tooltip */}
-        <div>
-          <p style={{ fontWeight: 600, fontSize: '1.2rem' }}>Últimas Movimentações</p>
-          <p>Mostra as últimas cinco (05) movimentações inseridas para o mês vigente</p>
+      <header className={style.header}>
+        <div className={style.titleContainer}>
+          <Wallet fontSize="large" />
+          <h1>Carteira Digital</h1>
         </div>
-      </div>
 
-      <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
-        <Card width="fit-content">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <p style={{ fontWeight: 700 }}>Março - 2025</p>
-            <p style={{ fontSize: '1.5rem', fontWeight: 600 }}>R$250.00</p>
-            <p style={{ marginTop: '1rem' }}>Próximo mês (Abril - 2025): R$250.00</p>
-          </div>
-        </Card>
-        <Card width="fit-content">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                gap: '1rem',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <p style={{ fontWeight: 700 }}>Março - 2025</p>
-                <p style={{ fontSize: '1.5rem', fontWeight: 600 }}>R$300.00</p>
-              </div>
-              <p style={{ fontSize: '1.5rem', fontWeight: 600, height: 'fit-content' }}>(Vale)</p>
+        <div className={style.buttonsContainer}>
+          <CustomButton icon={<Home sx={{ color: 'var(--colors-primary-light)' }} />} label="Home" />
+          <CustomButton icon={<Paid sx={{ color: 'var(--colors-primary-light)' }} />} label="Movimentações" />
+        </div>
+      </header>
+
+      <div className={style.container}>
+        <div className={style.card}>
+          <Card>
+            <div className={style.title}>
+              <h3>Últimas Movimentações</h3>
+              <InfoTooltip content="Mostra as últimas cinco (05) movimentações inseridas para o mês vigente" />
             </div>
-            <p style={{ marginTop: '1rem' }}>Próximo mês (Abril - 2025): R$250.00</p>
+
+            <Divider />
+
+            <TableRow fontWeight={600} labels={['Descrição', 'Valor', 'Operação']} />
+
+            <div>
+              {dataExample.map((data) => (
+                <TableRow labels={Object.values(data)} />
+              ))}
+            </div>
+          </Card>
+
+          <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
+            <BalanceCard
+              current="Junho - 2025"
+              currentValue={500}
+              next="Julho - 2025"
+              nextValue={650}
+              tooltip="Balanço - Banco"
+            />
+            <BalanceCard
+              current="Junho - 2025"
+              currentValue={250}
+              next="Julho - 2025"
+              nextValue={300}
+              tooltip="Balanço - Vale"
+            />
           </div>
+        </div>
+
+        <Card height="100%" justifyContent="center" alignItems="center">
+          Em Breve!
         </Card>
       </div>
-
-      <Card height="100%" justifyContent="center" alignItems="center">
-        Em Breve!
-      </Card>
     </div>
   )
 }

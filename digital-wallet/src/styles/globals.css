@@ -4,17 +4,22 @@
   /* --background: #8c6c6c; */
   --foreground: #171717;
   /* Primary Colors */
-  --colors-primary-main: #003366;
+  --colors-primary-main: #5d3c3c;
   --colors-primary-light: #8c6c6c;
   --colors-primary-dark: #734f4f;
-  /* --colors-primary-main: #5d3c3c;
-  --colors-primary-light: #8c6c6c;
-  --colors-primary-dark: #734f4f; */
+
+  --colors-secondary-main: #a9746e;
+  --colors-secondary-light: #e1b382;
+  --colors-secondary-dark: #3b2f2f;
+
+  --colors-card-background: #f2ebe9;
+
   /* Text Colors */
   --colors-text-primary: #000;
   --colors-text-secondary: #3b3b3b;
   --colors-text-contrast: #f5f0f0;
 
+  --colors-box-shadow: #00000033;
   /* Other Props */
   color-scheme: light;
 }
