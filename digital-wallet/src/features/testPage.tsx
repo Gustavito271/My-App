@@ -51,7 +51,7 @@ export const TestPage: FC = () => {
 
             <div>
               {dataExample.map((data) => (
-                <TableRow labels={Object.values(data)} />
+                <TableRow labels={Object.values(data)} slotProps={{ cell: { allowTooltip: true } }} />
               ))}
             </div>
           </Card>

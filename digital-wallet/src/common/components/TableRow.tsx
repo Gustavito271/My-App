@@ -7,13 +7,14 @@ const baseProperties = {
 } as CSSProperties
 
 interface TableCellProps extends Omit<CSSProperties, 'content'> {
+  allowTooltip?: boolean
   content: ReactNode
 }
 
-const TableCell: FC<TableCellProps> = ({ content, ...props }) => {
+const TableCell: FC<TableCellProps> = ({ allowTooltip, content, ...props }) => {
   return (
     <p
-      title={typeof content === 'string' ? content : undefined}
+      title={typeof content === 'string' && allowTooltip ? content : undefined}
       key={`column_${content}`}
       style={{
         width: '10rem',
@@ -30,13 +31,16 @@ const TableCell: FC<TableCellProps> = ({ content, ...props }) => {
 
 interface TableRowProps extends CSSProperties {
   labels: ReactNode[]
+  slotProps?: {
+    cell?: Partial<TableCellProps>
+  }
 }
 
-export const TableRow: FC<TableRowProps> = ({ labels, ...props }) => {
+export const TableRow: FC<TableRowProps> = ({ labels, slotProps, ...props }) => {
   return (
     <div style={baseProperties}>
       {labels.map((label) => (
-        <TableCell key={`cell_${crypto.randomUUID()}`} content={label} {...props} />
+        <TableCell key={`cell_${crypto.randomUUID()}`} content={label} {...props} {...slotProps?.cell} />
       ))}
     </div>
   )
