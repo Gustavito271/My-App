@@ -235,6 +235,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/big-shoulders-text/-/big-shoulders-text-5.2.5.tgz#18ab9b6b7e1f6f5ad73e3e416b948b47248acb1e"
   integrity sha512-I2/TelUBuX9RMrcdVdinjHzJbDSGgqQb8uOsx8+7XX+rcaXmMqeE1EmgYU5764XZfcPGjo9WK4Dc/cft59znGQ==
 
+"@fontsource/montserrat@^5.2.6":
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-5.2.6.tgz#083aba8d818c843cd2bb461c7f455680a12ad2ce"
+  integrity sha512-AfFxq1q5tgkOsjQfMFsh95uMXh39VbGOuBLlHLFg16/txv93lqK7Sr6jev0neuJzZy1kqRG16SH6xpUYnk4cZg==
+
 "@fontsource/roboto@^5.2.5":
   version "5.2.5"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-5.2.5.tgz#b2d869075277e2cba31694951a2d355a8965d763"

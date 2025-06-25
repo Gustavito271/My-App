@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import '@fontsource/big-shoulders-text'
+import '@fontsource/montserrat'
 import '@fontsource/roboto'
 import type { AppProps } from 'next/app'
 

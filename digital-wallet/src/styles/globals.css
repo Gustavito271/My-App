@@ -41,7 +41,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Roboto', 'Big Shoulders Text', sans-serif !important;
+  font-family: 'Montserrat', 'Roboto', 'Big Shoulders Text', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
