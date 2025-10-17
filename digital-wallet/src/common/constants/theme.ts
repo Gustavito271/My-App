@@ -9,40 +9,40 @@ export const COLORS = {
     light: '#42a5f5',
     dark: '#1565c0',
   },
-  
+
   // Cores secundárias
   secondary: {
     main: '#dc004e',
     light: '#ff5983',
     dark: '#9a0036',
   },
-  
+
   // Cores de status
   success: '#10b981',
   warning: '#f59e0b',
   error: '#ef4444',
   info: '#3b82f6',
-  
+
   // Cores neutras
   background: {
     default: '#ffffff',
     paper: '#f8fafc',
     card: '#ffffff',
   },
-  
+
   text: {
     primary: '#1f2937',
     secondary: '#6b7280',
     contrast: '#ffffff',
   },
-  
+
   // Cores de borda e sombra
   border: {
     light: '#e5e7eb',
     medium: '#d1d5db',
     dark: '#9ca3af',
   },
-  
+
   shadow: 'rgba(0, 0, 0, 0.1)',
 } as const
 
