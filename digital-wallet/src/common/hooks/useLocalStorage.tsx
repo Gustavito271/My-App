@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 /**
  * Hook customizado para gerenciar dados no localStorage
@@ -26,10 +26,10 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
     try {
       // Permite tanto valor direto quanto função
       const valueToStore = value instanceof Function ? value(storedValue) : value
-      
+
       // Atualiza o estado
       setStoredValue(valueToStore)
-      
+
       // Salva no localStorage
       window.localStorage.setItem(key, JSON.stringify(valueToStore))
     } catch (error) {
@@ -57,10 +57,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
  * @returns [preference, setPreference, removePreference]
  */
 export function usePreference<T>(key: string, defaultValue: T) {
-  const [preference, setPreference, removePreference] = useLocalStorage(
-    `preference_${key}`,
-    defaultValue
-  )
+  const [preference, setPreference, removePreference] = useLocalStorage(`preference_${key}`, defaultValue)
 
   return [preference, setPreference, removePreference] as const
 }
