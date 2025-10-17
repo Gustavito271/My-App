@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 💳 Carteira Digital
+
+Uma aplicação moderna de carteira digital construída com [Next.js](https://nextjs.org) e TypeScript, oferecendo uma interface intuitiva para gerenciamento financeiro pessoal.
+
+## ✨ Features
+
+- 📊 **Dashboard de Estatísticas** - Visualize receitas, despesas e saldo líquido
+- 💰 **Controle Financeiro** - Acompanhe suas movimentações mensais
+- 📱 **Design Responsivo** - Funciona perfeitamente em desktop e mobile
+- 🎨 **Interface Moderna** - UI/UX otimizada com Material-UI
+- 🔄 **Tempo Real** - Atualizações instantâneas dos dados
 
 ## Getting Started
 
