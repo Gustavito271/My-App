@@ -1,5 +1,6 @@
 import { Card } from '@/common/components/Card'
 import { formatCurrency } from '@/common/utils/currency'
+import { isValidNumber, isValidString, isValidStatsType } from '@/common/utils/validation'
 import { FC } from 'react'
 import { TrendingUp, TrendingDown, AccountBalance } from '@mui/icons-material'
 import style from '../styles/stats-card.module.scss'
@@ -13,6 +14,27 @@ interface StatsCardProps {
 }
 
 export const StatsCard: FC<StatsCardProps> = ({ title, value, type, percentage, icon }) => {
+  // Validação de props
+  if (!isValidString(title)) {
+    console.warn('StatsCard: title deve ser uma string não vazia')
+    return null
+  }
+
+  if (!isValidNumber(value)) {
+    console.warn('StatsCard: value deve ser um número válido')
+    return null
+  }
+
+  if (!isValidStatsType(type)) {
+    console.warn('StatsCard: type deve ser "income", "expense" ou "balance"')
+    return null
+  }
+
+  if (percentage !== undefined && !isValidNumber(percentage)) {
+    console.warn('StatsCard: percentage deve ser um número válido')
+    return null
+  }
+
   const getIcon = () => {
     if (icon) return icon
     
