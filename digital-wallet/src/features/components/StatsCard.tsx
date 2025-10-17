@@ -1,4 +1,5 @@
 import { Card } from '@/common/components/Card'
+import { formatCurrency } from '@/common/utils/currency'
 import { FC } from 'react'
 import { TrendingUp, TrendingDown, AccountBalance } from '@mui/icons-material'
 import style from '../styles/stats-card.module.scss'
@@ -41,7 +42,7 @@ export const StatsCard: FC<StatsCardProps> = ({ title, value, type, percentage, 
   }
 
   const formatValue = (val: number) => {
-    return `R$ ${val.toFixed(2)}`
+    return formatCurrency(val)
   }
 
   return (

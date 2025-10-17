@@ -1,6 +1,7 @@
 import { Card } from '@/common/components/Card'
 import { Divider } from '@/common/components/Divider'
 import { InfoTooltip } from '@/common/components/InfoTooltip'
+import { formatCurrency } from '@/common/utils/currency'
 import { FC } from 'react'
 import style from '../styles/balance-card.module.scss'
 
@@ -20,8 +21,8 @@ export const BalanceCard: FC<BalanceCardProps> = ({ current, currentValue, next,
         {tooltip && <InfoTooltip content={tooltip} />}
       </div>
       <Divider />
-      <p className={style.currentDateBalance}>{`R$${currentValue.toFixed(2)}`}</p>
-      <p className={style.nextDate}>{`Próximo mês (${next}): R$${nextValue.toFixed(2)}`}</p>
+      <p className={style.currentDateBalance}>{formatCurrency(currentValue)}</p>
+      <p className={style.nextDate}>{`Próximo mês (${next}): ${formatCurrency(nextValue)}`}</p>
     </Card>
   )
 }
