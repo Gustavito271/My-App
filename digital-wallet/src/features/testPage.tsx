@@ -10,9 +10,13 @@ import style from '../common/styles/main-page.module.scss'
 import { BalanceCard } from './components/BalanceCard'
 import { StatsCard } from './components/StatsCard'
 import { UserPreferences } from './components/UserPreferences'
+import { ToastDemo } from './components/ToastDemo'
+import { ToastContainer } from '@/common/components/ToastContainer'
+import { useToast } from '@/common/hooks/useToast'
 
 export const TestPage: FC = () => {
   const isMobile = useIsMobile()
+  const { toasts, removeToast } = useToast()
 
   // Dados de exemplo para movimentações
   const dataExample = [
@@ -25,11 +29,11 @@ export const TestPage: FC = () => {
 
   // Dados de exemplo para estatísticas do mês
   const monthlyStats = {
-    income: 2500.00,
-    expense: 1800.50,
-    balance: 699.50,
+    income: 2500.0,
+    expense: 1800.5,
+    balance: 699.5,
     incomeGrowth: 12.5,
-    expenseGrowth: -3.2
+    expenseGrowth: -3.2,
   }
 
   return (
@@ -64,11 +68,7 @@ export const TestPage: FC = () => {
             type="expense"
             percentage={monthlyStats.expenseGrowth}
           />
-          <StatsCard
-            title="Saldo Líquido"
-            value={monthlyStats.balance}
-            type="balance"
-          />
+          <StatsCard title="Saldo Líquido" value={monthlyStats.balance} type="balance" />
         </div>
       </div>
 
@@ -109,11 +109,17 @@ export const TestPage: FC = () => {
           </div>
         </div>
 
-        <UserPreferences 
-          onThemeChange={(theme) => console.log('Tema alterado:', theme)}
-          onCurrencyChange={(currency) => console.log('Moeda alterada:', currency)}
-        />
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <UserPreferences
+            onThemeChange={(theme) => console.log('Tema alterado:', theme)}
+            onCurrencyChange={(currency) => console.log('Moeda alterada:', currency)}
+          />
+          <ToastDemo />
+        </div>
       </div>
+
+      {/* Container de notificações toast */}
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </div>
   )
 }

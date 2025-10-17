@@ -1,0 +1,72 @@
+.container {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  max-height: 100vh;
+  overflow: hidden;
+  padding: 1rem;
+
+  // Permitir interação apenas nos toasts
+  > * {
+    pointer-events: auto;
+  }
+}
+
+// Posições
+.position_top_left {
+  top: 0;
+  left: 0;
+  align-items: flex-start;
+}
+
+.position_top_center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.position_top_right {
+  top: 0;
+  right: 0;
+  align-items: flex-end;
+}
+
+.position_bottom_left {
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+}
+
+.position_bottom_center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.position_bottom_right {
+  bottom: 0;
+  right: 0;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+    left: 0;
+    right: 0;
+    transform: none !important;
+  }
+
+  .position_top_center,
+  .position_bottom_center {
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+}
