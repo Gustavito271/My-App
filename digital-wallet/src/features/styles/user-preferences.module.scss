@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--colors-text-primary);
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--colors-border-light);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--colors-text-secondary);
+  font-size: 0.875rem;
+}
+
+.select {
+  padding: 0.75rem;
+  border: 1px solid var(--colors-border-medium);
+  border-radius: var(--border-radius-md);
+  background-color: var(--colors-background-default);
+  color: var(--colors-text-primary);
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--colors-primary-main);
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+  }
+
+  &:hover {
+    border-color: var(--colors-primary-light);
+  }
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--colors-text-secondary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--colors-primary-main);
+  cursor: pointer;
+}
+
+.info {
+  text-align: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--colors-border-light);
+  
+  small {
+    color: var(--colors-text-secondary);
+    font-size: 0.75rem;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    gap: 1rem;
+  }
+  
+  .title {
+    font-size: 1.125rem;
+  }
+  
+  .select {
+    padding: 0.625rem;
+  }
+}

@@ -9,6 +9,7 @@ import { FC } from 'react'
 import style from '../common/styles/main-page.module.scss'
 import { BalanceCard } from './components/BalanceCard'
 import { StatsCard } from './components/StatsCard'
+import { UserPreferences } from './components/UserPreferences'
 
 export const TestPage: FC = () => {
   const isMobile = useIsMobile()
@@ -108,9 +109,10 @@ export const TestPage: FC = () => {
           </div>
         </div>
 
-        <Card height="100%" justifyContent="center" alignItems="center">
-          Em Breve!
-        </Card>
+        <UserPreferences 
+          onThemeChange={(theme) => console.log('Tema alterado:', theme)}
+          onCurrencyChange={(currency) => console.log('Moeda alterada:', currency)}
+        />
       </div>
     </div>
   )
